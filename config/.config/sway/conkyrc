@@ -1,0 +1,17 @@
+conky.config = {
+    background = false,
+    out_to_x = false,
+    out_to_console = true,
+    update_interval = 1,
+    total_run_times = 0,
+    use_spacer = "none"
+}
+
+conky.text = [[ 
+  ${downspeedf wlp58s0} | ${upspeedf wlp58s0}     \
+  ${wireless_link_qual_perc wlp58s0}  ${wireless_essid wlp58s0}     \
+  ${hwmon 2 temp 1} | ${hwmon 2 temp 3}     \
+B  ${battery_bar BAT0}     \
+  ${time %a %b %d}     \
+  ${time %H:%M}   
+]]
