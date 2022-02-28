@@ -26,3 +26,14 @@ This will create symlink replicating the structure of this repository inside the
  $ cd ~/.dotfiles
  $ stow emacs/
  ```
+
+## Requirements/Software
+These dotfiles are currently made for the following configuration of
+software for my personal laptop running [Arch
+Linux](https://archlinux.org/)
+
+- For shell I use zsh with [oh-my-zsh](https://ohmyz.sh/)
+- For terminal app I use [alacritty](https://alacritty.org/)
+- For the window manager I use [sway](https://swaywm.org/)
+- For the desktop bar I use waybar [waybar](https://github.com/Alexays/Waybar)
+- For text editor I use emacs with [prelude](https://prelude.emacsredux.com/en/latest/)
