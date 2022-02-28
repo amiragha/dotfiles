@@ -1,7 +1,7 @@
 {
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock", "idle_inhibitor"],
-    "modules-right": ["tray", "custom/scratchpad-indicator", "network", "pulseaudio", "temperature", "memory", "battery", "custom/power", "custom/menu"],
+    "modules-right": ["tray", "custom/scratchpad-indicator", "network", "pulseaudio", "backlight", "temperature", "memory", "battery", "sway/language", "custom/power", "custom/menu"],
 
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -23,6 +23,9 @@
     "tray": {
         "icon-size": 15,
         "spacing": 10
+    },
+    "sway/language": {
+        "format": "{short} {variant}",
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -74,6 +77,11 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": " {percent}% {icon}",
+        "format-icons": ["", ""]
     },
     "custom/power": {
         "format": "",

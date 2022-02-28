@@ -66,6 +66,12 @@ input "1739:30383:DLL082A:01_06CB:76AF_Touchpad" {
       middle_emulation enabled
 }
 
+input * {
+    xkb_layout "us,ir"
+    xkb_options "grp:shifts_toggle"
+}
+
+input <identifier> xkb_model "pc101"
 ### Key bindings
 #
 # Basics:
@@ -212,8 +218,12 @@ default_border pixel
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
 bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
-bindsym XF86MonBrightnessDown exec light -U 5
-bindsym XF86MonBrightnessUp exec light -A 5
+
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+
+#bindsym XF86MonBrightnessDown exec light -U 5
+#bindsym XF86MonBrightnessUp exec light -A 5
 
 #
 # Status Bar:

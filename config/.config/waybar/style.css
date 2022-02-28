@@ -41,6 +41,7 @@ window#waybar {
   background-color: rgba(0,43,51,0.85);
 }
 
+
 #clock,
 #battery,
 #cpu,
@@ -51,6 +52,8 @@ window#waybar {
 #custom-media,
 #tray,
 #mode,
+#language,
+#backlight,
 #custom-power,
 #custom-menu,
 #idle_inhibitor {
