@@ -4,11 +4,6 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-### execs
-
-#exec --no-startup-id redshift -l 35.4139:51.2517 # tehran
-exec --no-startup-id redshift -l  29.3637:52.3152 # shiraz
-
 ### Variables
 #
 
@@ -33,6 +28,7 @@ bindsym $mod+Ctrl+s exec rofi -show ssh
 bindsym $mod+Ctrl+w exec rofi -show window
 
 ### Output configuration
+output eDP-1 scale 1.25
 #
 # Default wallpaper (more resolutions are available in /usr/share/sway/)
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
@@ -96,7 +92,8 @@ floating_modifier $mod normal
 bindsym $mod+Shift+r reload
 
 # exit sway (logs you out of your wayland session)
-bindsym $mod+Shift+q swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+#bindsym $mod+Shift+q swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+q exit
 
 #
 # Moving around:
@@ -234,6 +231,12 @@ bar {
 
 # Read `man 5 sway-bar` for more information about this section.
 include /etc/sway/config.d/*
+
+### execs
+
+### color temperature adjustment
+# gammastep is a fork of redshift it reads the corresponding config.init file 
+exec gammastep
 
 # Fix for dbus wait of gtk apps
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
